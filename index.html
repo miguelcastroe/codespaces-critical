@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Minimizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Text Minimizer</h1>
+
+    <!-- Language Selection -->
+    <label for="language" id="language-label">Select Language / Seleccione el idioma:</label>
+    <select id="language" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+
+    <!-- Text Input -->
+    <label for="input-text" id="input-label">Enter your text to minimize:</label>
+    <textarea id="input-text" rows="10" placeholder="Paste your text here..."></textarea>
+
+    <!-- Minimize Button -->
+    <button id="minimize-button" onclick="minimizeText()">Minimize Text</button>
+
+    <!-- Output Area -->
+    <h3 id="output-label">Minimized Text:</h3>
+    <textarea id="output-text" rows="10" readonly></textarea>
+
+    <!-- Message Box -->
+    <p id="message-box"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
