@@ -1,37 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Minimizer</title>
+  <title>MCE®</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1 id="title">Text Minimizer</h1>
+  <header class="site-header" aria-label="Navegación principal">
+    <nav class="top-nav">
+      <a class="wordmark" href="#inicio" aria-label="MCE inicio">MCE®</a>
+      <a class="nav-cta cta" href="#cierre">Conversemos <span aria-hidden="true">→</span></a>
+    </nav>
+  </header>
 
-    <!-- Language Selection -->
-    <label for="language" id="language-label">Select Language / Seleccione el idioma:</label>
-    <select id="language" onchange="changeLanguage()">
-      <option value="en">English</option>
-      <option value="es">Español</option>
-    </select>
+  <main>
+    <section class="hero page-grid full-height" id="inicio" aria-label="Inicio">
+      <p class="hero-kicker cell col-2-8 row-1">Las marcas ya pueden generar más de lo que pueden ordenar, evaluar o sostener.</p>
+      <h1 class="hero-title cell col-3-12 row-2">Usar IA ya no es la diferencia. Saber dirigirla sí.</h1>
+      <p class="hero-support cell col-6-11 row-3">Trae un desafío. Salimos con una forma de trabajo.</p>
+      <a class="hero-link cta cell col-9-13 row-4" href="#cierre">Conversemos <span aria-hidden="true">→</span></a>
+    </section>
 
-    <!-- Text Input -->
-    <label for="input-text" id="input-label">Enter your text to minimize:</label>
-    <textarea id="input-text" rows="10" placeholder="Paste your text here..."></textarea>
+    <section class="page-grid section" aria-labelledby="premisa-title">
+      <p class="section-label cell col-1-2" id="premisa-title">Premisa</p>
+      <div class="section-copy cell col-3-9">
+        <p class="display-line">No empezamos por herramientas. Empezamos por el trabajo.</p>
+        <p>La pregunta no es qué herramienta usar. Es qué parte del trabajo merece usarla, qué debe transformar y qué no debería tocar.</p>
+      </div>
+    </section>
 
-    <!-- Minimize Button -->
-    <button id="minimize-button" onclick="minimizeText()">Minimize Text</button>
+    <section class="page-grid section bio" aria-label="Biografía">
+      <div class="section-copy cell col-2-8">
+        <p class="display-line">Miguel Castro lleva más de veinte años como Director Creativo.</p>
+      </div>
+      <div class="section-copy cell col-8-12">
+        <p>Empezó cuando internet todavía no tenía reglas escritas, fue parte de la primera generación de redactores interactivos y trabajó en Nike+ antes de que los wearables fueran una categoría reconocible.</p>
+        <p>Ganó dos Cannes Lions en Innovación, incluido el primer Grand Prix para el Perú con MouthPad^.</p>
+      </div>
+    </section>
 
-    <!-- Output Area -->
-    <h3 id="output-label">Minimized Text:</h3>
-    <textarea id="output-text" rows="10" readonly></textarea>
+    <section class="section process" aria-labelledby="proceso-title">
+      <div class="page-grid process-intro">
+        <p class="section-label cell col-1-2" id="proceso-title">Cómo funciona</p>
+        <div class="section-copy cell col-3-10">
+          <p class="display-line">Cinco decisiones para dirigir la IA dentro de un desafío.</p>
+          <p>Cada paso produce una decisión. Al final, el equipo no recibe una lista de herramientas: recibe una primera forma de trabajo ejecutable.</p>
+        </div>
+      </div>
 
-    <!-- Message Box -->
-    <p id="message-box"></p>
-  </div>
+      <ol class="steps" aria-label="Cinco decisiones">
+        <li class="step page-grid">
+          <span class="step-number cell col-1-3">01</span>
+          <div class="step-content cell col-4-12">
+            <h3>Desafío</h3>
+            <p>No "queremos usar IA". Eso no es un desafío. El trabajo empieza cuando el equipo define qué presión concreta necesita resolver.</p>
+          </div>
+        </li>
+        <li class="step page-grid">
+          <span class="step-number cell col-1-3">02</span>
+          <div class="step-content cell col-4-12">
+            <h3>Zona de trabajo</h3>
+            <p>No buscamos herramientas. Buscamos dónde la IA puede hacer algo que vale la pena dentro del trabajo. Lectura. Síntesis. Evaluación. Preparación. Comparación.</p>
+          </div>
+        </li>
+        <li class="step page-grid">
+          <span class="step-number cell col-1-3">03</span>
+          <div class="step-content cell col-4-12">
+            <h3>Rol de la IA</h3>
+            <p>La dirección empieza cuando el equipo asigna un rol claro a la IA. Leer información. Detectar patrones. Ordenar insumos. Comparar opciones. Preparar decisiones.</p>
+          </div>
+        </li>
+        <li class="step page-grid">
+          <span class="step-number cell col-1-3">04</span>
+          <div class="step-content cell col-4-12">
+            <h3>Límites</h3>
+            <p>No todo lo que la IA puede hacer debe entrar al trabajo. La IA no decide la estrategia final. No define el punto de vista. No reemplaza la sensibilidad cultural. No determina el valor de una idea. Cada límite define su contraparte: lo que la IA no toca es lo que el equipo decide.</p>
+          </div>
+        </li>
+        <li class="step page-grid">
+          <span class="step-number cell col-1-3">05</span>
+          <div class="step-content cell col-4-12">
+            <h3>Forma de trabajo</h3>
+            <p>La última decisión une las anteriores. La IA procesa los insumos. El equipo decide qué significa cada patrón para la estrategia. Y se define la prueba: qué tendría que pasar para saber que la forma de trabajo funciona.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-  <script src="app.js"></script>
+    <section class="section deliverable inverted" aria-labelledby="entregable-title">
+      <div class="page-grid inverted-grid deliverable-intro">
+        <p class="section-label cell col-1-2" id="entregable-title">Qué produce el workshop</p>
+        <div class="section-copy cell col-3-9">
+          <p class="display-line">Un Canvas de Uso de IA.</p>
+          <p>El uso es lo que se dirige. El canvas muestra cómo queda dirigido.</p>
+          <p>Una primera forma de trabajo aplicada al desafío. No está pensada para ser perfecta. Está pensada para probarse.</p>
+          <p>Cada componente sale de una decisión del workshop. Nada aparece sin haberse decidido.</p>
+        </div>
+      </div>
+      <ol class="component-grid" aria-label="Componentes del canvas">
+        <li><span>01</span> Desafío</li>
+        <li><span>02</span> Zona de trabajo</li>
+        <li><span>03</span> Rol de la IA</li>
+        <li><span>04</span> Límites de uso</li>
+        <li><span>05</span> Decisiones humanas</li>
+        <li><span>06</span> Prueba y próximo ajuste</li>
+      </ol>
+    </section>
+
+    <section class="page-grid section" aria-labelledby="para-title">
+      <p class="section-label cell col-1-2" id="para-title">Para quién</p>
+      <div class="section-copy cell col-3-9">
+        <p class="display-line">Para equipos de creatividad, estrategia, producto, innovación y marketing que necesitan definir cómo debe trabajar la IA dentro de un desafío concreto.</p>
+        <p>No importa el nivel técnico. Importa la decisión.</p>
+      </div>
+    </section>
+
+    <section class="page-grid section" aria-labelledby="no-es-title">
+      <p class="section-label cell col-1-2" id="no-es-title">Qué no es</p>
+      <div class="section-copy cell col-3-9">
+        <p class="display-line">No es una clase de herramientas.</p>
+        <p>No es una sesión de prompts. No es una lista de apps. No es una promesa de automatización total. No es una charla inspiracional sobre IA.</p>
+        <p>Es una manera de decidir dónde y cómo debe entrar la IA para mejorar el trabajo.</p>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="page-grid faq-heading">
+        <p class="section-label cell col-1-2" id="faq-title">Preguntas frecuentes</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>¿Y si el equipo ya usa IA todos los días?</summary>
+          <p>Mejor. El workshop no enseña a usarla: ordena cómo dirigirla. Cuanto más uso acumulado tenga el equipo, más material hay para definir roles y límites.</p>
+        </details>
+        <details>
+          <summary>¿Salimos con una herramienta lista?</summary>
+          <p>Salimos con una primera forma de trabajo testeable. Puede convertirse después en herramienta, agente, sistema interno o proceso más robusto.</p>
+        </details>
+        <details>
+          <summary>¿Esto reemplaza al equipo técnico?</summary>
+          <p>No. Define la lógica previa: qué debe entender el sistema, qué debe hacer, qué no debe tocar y cómo debería probarse antes de construir.</p>
+        </details>
+        <details>
+          <summary>¿Cuál es el formato?</summary>
+          <p>Ocho horas, divididas en dos sesiones presenciales. Funciona desde cuatro personas. Una sola condición: en la sala tiene que haber al menos una persona con autoridad para decidir. El workshop produce decisiones y alguien tiene que poder tomarlas.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="closing page-grid full-height" id="cierre" aria-label="Cierre">
+      <p class="closing-lead cell col-2-7 row-1">Trae un desafío.</p>
+      <p class="closing-title cell col-3-12 row-2">La IA ya está en el trabajo. La pregunta es si alguien la está dirigiendo.</p>
+      <a class="closing-link cta cell col-9-13 row-3" href="mailto:hola@example.com">Conversemos <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
 </body>
 </html>
