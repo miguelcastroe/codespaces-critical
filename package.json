@@ -1,0 +1,15 @@
+{
+  "name": "codespaces-critical",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Utilities for scraping Cannes Lions winners from Love The Work.",
+  "scripts": {
+    "scrape:love-the-work": "node scrape-love-the-work.js"
+  },
+  "dependencies": {
+    "playwright": "^1.49.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
