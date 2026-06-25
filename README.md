@@ -53,6 +53,21 @@ By default the scraper writes `winners.json` and `winners.csv` in the repository
 OUTPUT_JSON=tmp/winners.json OUTPUT_CSV=tmp/winners.csv HEADLESS=false node scrape-love-the-work.js
 ```
 
+## Run on GitHub Actions
+
+The workflow in `.github/workflows/main.yml` validates the scraper on pushes and pull requests. To run the live scraper on GitHub and download the outputs:
+
+1. Push this branch to GitHub.
+2. Open the repository on GitHub.
+3. Go to **Actions**.
+4. Select the **CI** workflow.
+5. Click **Run workflow**.
+6. Set `run_scraper` to `true`.
+7. Click **Run workflow** again to start the run.
+8. When the run finishes, open the completed workflow run and download the `love-the-work-winners` artifact. It contains `winners.json` and `winners.csv`.
+
+The scraper job installs Playwright Chromium in the runner, runs headlessly, and uploads the generated output files as a workflow artifact.
+
 ### Output fields
 
 Each record contains:
