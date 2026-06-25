@@ -1,1 +1,73 @@
+name: CI
 
+on:
+  push:
+    branches:
+      - main
+      - work
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_scraper:
+        description: Run the Love The Work scraper and upload winners outputs
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  validate:
+    name: Validate scraper
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Validate scraper syntax
+        run: node --check scrape-love-the-work.js
+
+  scrape:
+    name: Run Love The Work scraper
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.event_name == 'workflow_dispatch' && inputs.run_scraper == 'true'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scraper
+        env:
+          HEADLESS: 'true'
+          OUTPUT_JSON: winners.json
+          OUTPUT_CSV: winners.csv
+        run: npm run scrape:love-the-work
+
+      - name: Upload winners outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: love-the-work-winners
+          path: |
+            winners.json
+            winners.csv
+          if-no-files-found: error
